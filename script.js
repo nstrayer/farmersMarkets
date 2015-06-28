@@ -15,7 +15,7 @@ var width = parseInt(d3.select("#viz").style("width").slice(0, -2)),
     selectColor = "#ff7f00"
     defaultColor = "#377eb8";
 
-var textSize = 15
+var textSize = 20
 if(isMobile){
     textSize = 30
     d3.select("h1").style("font-size", 145)
@@ -34,7 +34,7 @@ var svg = d3.select("#viz").append("svg")
 
 var projection = d3.geo.albersUsa()
     // .scale(1200)
-    .scale(width)
+    .scale(width*1.1)
     .translate([ width/ 2, height / 2]);
 
 var path = d3.geo.path()
