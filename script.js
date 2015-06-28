@@ -30,6 +30,20 @@ var projection = d3.geo.albersUsa()
 var path = d3.geo.path()
     .projection(projection);
 
+var zoom = d3.behavior.zoom()
+    .on("zoom",function() {
+        g.attr("transform","translate("+
+            d3.event.translate.join(",")+")scale("+d3.event.scale+")");
+        g.selectAll("circle")
+            .attr("d", path.projection(projection))
+            .attr("r", 2/zoom.scale());
+        g.selectAll("path")
+            .attr("d", path.projection(projection));
+    });
+
+var g = svg.append("g")
+    // .call(zoom);
+
 //Set up the queue so that all the stuff shows up at the same time. Also, the code is cleaner
 queue()
     .defer(d3.json,"us-10m.json")
@@ -38,7 +52,7 @@ queue()
 
 //define the function that gets run when the data are loaded.
 function ready(error, us, oldData){
-    var g = svg.append("g");
+
 
     g.append("g")
           .attr("id", "states")
@@ -78,7 +92,7 @@ function ready(error, us, oldData){
         .domain([0, 4])
         .range([height/5, 4*(height/5)])
 
-    svg.selectAll("circle")
+    g.selectAll("circle")
         .data(data).enter()
         .append("circle")
         .attr("class", function(d){return classGenerator(d, types)})
@@ -86,7 +100,7 @@ function ready(error, us, oldData){
         .attr("cy", function(d){return projection([d.x,d.y])[1]  })
         .attr("r", 2)
         .attr("fill", defaultColor)
-        .attr("fill-opacity", "0.5")
+        .attr("fill-opacity", "0.75")
 
     //Let's make the menu.
 
@@ -110,6 +124,7 @@ function ready(error, us, oldData){
                     .classed("selected", true)
                     .attr("font-size", "20")
                     .style("fill", selectColor)
+                    .call(function(d){ highlighter(selected)})
             } else {
                 //remove from the selected list:
                 var index = selected.indexOf(d)
@@ -118,8 +133,9 @@ function ready(error, us, oldData){
                 d3.select(this)
                     .attr("font-size", "15px")
                     .style("fill", "white")
+                    .call(function(d){ highlighter(selected)})
             }
-            highlighter(selected)
+            // highlighter(selected)
         })
 }
 
@@ -157,7 +173,7 @@ function highlighter(selected){
     //return all circles to default
     d3.selectAll(".market")
         .attr("fill", defaultColor)
-        .attr("fill-opacity", "0.5")
+        .attr("fill-opacity", "0.75")
 
     //if there is anything selected, highlight it.
     if(selected.length != 0){
