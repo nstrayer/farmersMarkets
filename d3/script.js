@@ -73,6 +73,8 @@ function ready(error, us, oldData){
 
     //Let's make the menu.
 
+    var selected = []
+
     svg.selectAll("text")
         .data(types).enter()
         .append("text")
@@ -83,6 +85,15 @@ function ready(error, us, oldData){
         .attr("font-size", "15px")
         .attr("text-anchor", "middle")
         .style("fill", "white")
+        .on("click", function(d){
+            d3.select(this)
+                .attr("font-size", "20")
+                .style("fill", "blue")
+            if ($.inArray(d, selected) == -1){
+                selected.push(d)
+            }
+            console.log(selected)
+        })
 }
 
 //Here is where we keep the functions.

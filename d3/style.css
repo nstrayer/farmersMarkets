@@ -37,3 +37,12 @@ path {
   stroke-linecap: round;
   pointer-events: none;
 }
+
+.normal {
+    fill: white;
+    font-size: 18;
+}
+.clicked {
+    fill: blue;
+    font-size: 25;
+}
