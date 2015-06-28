@@ -97,12 +97,12 @@ function ready(error, us, oldData){
                 //remove from the selected list:
                 var index = selected.indexOf(d)
                 selected.splice(index, 1)
-                //return to default format. 
+                //return to default format.
                 d3.select(this)
                     .attr("font-size", "15px")
                     .style("fill", "white")
             }
-            console.log(selected)
+            highlighter(selected)
         })
 }
 
@@ -132,4 +132,20 @@ function getCol(i){
     //Function to get column in menu
     //i indexes at 0, goes up to 19 in this case.
     return Math.floor(i/5)
+}
+
+//lets make the function that highlights markets with the selected combination of traits!
+
+function highlighter(selected){
+    //return all circles to default
+    d3.selectAll(".market").attr("fill", "steelblue")
+
+    //if there is anything selected, highlight it. 
+    if(selected.length != 0){
+        //converted the selected list to a css selector string.
+        var selector = "." + selected.join('.')
+        d3.selectAll(selector)
+            .attr("fill", "red")
+    }
+
 }
