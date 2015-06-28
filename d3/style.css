@@ -5,8 +5,27 @@
     -o-filter: blur(5px);
     filter: blur(5px);
 }
+
+#title {
+    height: 75px;
+    color: white;
+}
+
+.title {
+    font-size: 30;
+    font-family: optima;
+    color: white;
+    padding-left: 15px;
+}
+
+p {
+    color: white;
+    padding-left: 15px;
+    font-family: optima;
+}
+
 body {
-  font: 10px sans-serif;
+  /*font: 10px sans-serif;*/
   background-color: black;
 }
 
@@ -27,7 +46,6 @@ path {
   fill: #aaa;
   fill-opacity:0.3;
 }
-
 
 #state-borders {
   fill: none;

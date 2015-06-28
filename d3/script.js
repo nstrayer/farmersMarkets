@@ -1,7 +1,14 @@
-var width = parseInt(d3.select("body").style("width").slice(0, -2)),
-    height = $(window).height() - 20,
-    padding = 20;
+d3.selection.prototype.moveToFront = function() {
+  return this.each(function(){
+    this.parentNode.appendChild(this);
+  });
+};
 
+var width = parseInt(d3.select("body").style("width").slice(0, -2)),
+    height = $(window).height() - 75,
+    padding = 20,
+    selectColor = "#ff7f00"
+    defaultColor = "#377eb8"
 
 var svg = d3.select("#viz").append("svg")
     .attr("width", width)
@@ -9,7 +16,7 @@ var svg = d3.select("#viz").append("svg")
 
 var projection = d3.geo.albersUsa()
     .scale(1200)
-    .translate([ width/ 1.6, height / 2]);
+    .translate([ width/ 1.5, height / 2]);
 
 var path = d3.geo.path()
     .projection(projection);
@@ -56,11 +63,11 @@ function ready(error, us, oldData){
 
     var menuXScale = d3.scale.ordinal()
         .domain([0, 1, 2, 3])
-        .rangeRoundPoints([padding*4, width/4.5]);
+        .rangeRoundPoints([padding*6, width/4]);
 
     var menuYScale = d3.scale.linear()
         .domain([0, 4])
-        .range([padding*3, height - padding*3])
+        .range([height/5, 4*(height/5)])
 
     svg.selectAll("circle")
         .data(data).enter()
@@ -69,7 +76,8 @@ function ready(error, us, oldData){
         .attr("cx", function(d){return projection([d.x,d.y])[0]  })
         .attr("cy", function(d){return projection([d.x,d.y])[1]  })
         .attr("r", 2)
-        .attr("fill", "steelblue")
+        .attr("fill", defaultColor)
+        .attr("fill-opacity", "0.5")
 
     //Let's make the menu.
 
@@ -92,7 +100,7 @@ function ready(error, us, oldData){
                 d3.select(this)
                     .classed("selected", true)
                     .attr("font-size", "20")
-                    .style("fill", "blue")
+                    .style("fill", selectColor)
             } else {
                 //remove from the selected list:
                 var index = selected.indexOf(d)
@@ -138,14 +146,19 @@ function getCol(i){
 
 function highlighter(selected){
     //return all circles to default
-    d3.selectAll(".market").attr("fill", "steelblue")
+    d3.selectAll(".market")
+        .attr("fill", defaultColor)
+        .attr("fill-opacity", "0.5")
 
-    //if there is anything selected, highlight it. 
+    //if there is anything selected, highlight it.
     if(selected.length != 0){
         //converted the selected list to a css selector string.
         var selector = "." + selected.join('.')
         d3.selectAll(selector)
-            .attr("fill", "red")
+            .attr("fill", selectColor)
+            // .attr("r", 4)
+            .attr("fill-opacity", "1")
+            .moveToFront()
     }
 
 }
