@@ -24,7 +24,7 @@ var svg = d3.select("#viz").append("svg")
 
 var projection = d3.geo.albersUsa()
     // .scale(1200)
-    .scale((width/85)*100)
+    .scale((width/90)*100)
     .translate([ width/ 2, height / 2]);
 
 var path = d3.geo.path()
