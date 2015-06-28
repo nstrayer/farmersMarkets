@@ -1,3 +1,7 @@
+var isMobile = /iphone|ipod|ipad|android|blackberry|opera mini|opera mobi|skyfire|maemo|windows phone|palm|iemobile|symbian|symbianos|fennec/i.test(navigator.userAgent.toLowerCase());
+
+console.log(isMobile)
+
 d3.selection.prototype.moveToFront = function() {
   return this.each(function(){
     this.parentNode.appendChild(this);
@@ -10,6 +14,12 @@ var width = parseInt(d3.select("#viz").style("width").slice(0, -2)),
     padding = 20,
     selectColor = "#ff7f00"
     defaultColor = "#377eb8";
+
+var textSize = 15
+if(isMobile){
+    textSize = 30
+    d3.select("h1").style("font-size", 145)
+}
 
 console.log(mWidth)
 console.log(width)
@@ -52,8 +62,6 @@ queue()
 
 //define the function that gets run when the data are loaded.
 function ready(error, us, oldData){
-
-
     g.append("g")
           .attr("id", "states")
         .selectAll("path")
@@ -88,6 +96,10 @@ function ready(error, us, oldData){
         .domain([0, 1, 2, 3])
         .rangeRoundPoints([padding*4, mWidth - padding*4]);
 
+    if (isMobile){
+        menuXScale.rangeRoundPoints([padding*7, mWidth - padding*7]);
+    }
+
     var menuYScale = d3.scale.linear()
         .domain([0, 4])
         .range([height/5, 4*(height/5)])
@@ -113,7 +125,7 @@ function ready(error, us, oldData){
         .attr("y", function(d,i){return menuYScale(getRow(i))})
         .text(function(d){return d})
         .attr("font-family", "optima")
-        .attr("font-size", "15px")
+        .attr("font-size", textSize)
         .attr("text-anchor", "middle")
         .style("fill", "white")
         .on("click", function(d){
@@ -122,7 +134,7 @@ function ready(error, us, oldData){
                 selected.push(d)
                 d3.select(this)
                     .classed("selected", true)
-                    .attr("font-size", "20")
+                    .attr("font-size", textSize + 5)
                     .style("fill", selectColor)
                     .call(function(d){ highlighter(selected)})
             } else {
@@ -131,7 +143,7 @@ function ready(error, us, oldData){
                 selected.splice(index, 1)
                 //return to default format.
                 d3.select(this)
-                    .attr("font-size", "15px")
+                    .attr("font-size", textSize)
                     .style("fill", "white")
                     .call(function(d){ highlighter(selected)})
             }
