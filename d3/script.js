@@ -43,22 +43,40 @@ function ready(error, us, oldData){
     data = []
     for (var i = 0; i < oldData.length; i++){
         var d = oldData[i]
-        if(projection([d.x, d.y]) != null){ //if the projection fails, drop that value
-                data.push(d)
-        }
+        //if the projection fails, drop that value
+        if(projection([d.x, d.y]) != null){ data.push(d) }
     }
+
+    //we want to get the types of products offered as an array for the construction of the menu
+    var types = Object.keys(data[0])
+    types = types.slice(6, types.length)
+
+    //code to test the classGenerator function. It works!
+    // var test = classGenerator(data[1], types)
+    // console.log(test)
+
 
     svg.selectAll("circle")
         .data(data).enter()
         .append("circle")
+        .attr("class", function(d){return classGenerator(d, types)})
         .attr("cx", function(d){return projection([d.x,d.y])[0]  })
         .attr("cy", function(d){return projection([d.x,d.y])[1]  })
         .attr("r", 2)
         .attr("fill", "steelblue")
-        .each(function(d){
-            if (projection([d.x,d.y]) == null){
-                console.log([d.x,d.y])
-            }
+}
 
-            })
+function classGenerator(d, types){
+    //take a data object and return a string for the class designation.
+    //if a market has an object, include a class for that object.
+    //e.g. if the market has just meat and vegetables, return "mean vegetables".
+    var classString = ["market"]
+    for (var i = 0; i < types.length; i++){
+        type = types[i]
+
+        //add the type if it is included
+        if (d[type] == "Y"){ classString.push(type)}
+    }
+    //convert array of strings to one big string
+    return classString.join(' ')
 }
