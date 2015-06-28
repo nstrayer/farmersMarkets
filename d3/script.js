@@ -54,7 +54,7 @@ function ready(error, us, oldData){
     //code to test the classGenerator function. It works!
     // var test = classGenerator(data[1], types)
     // console.log(test)
-
+    
 
     svg.selectAll("circle")
         .data(data).enter()
