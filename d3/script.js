@@ -86,11 +86,21 @@ function ready(error, us, oldData){
         .attr("text-anchor", "middle")
         .style("fill", "white")
         .on("click", function(d){
-            d3.select(this)
-                .attr("font-size", "20")
-                .style("fill", "blue")
+            //if the type hasn't already been selected
             if ($.inArray(d, selected) == -1){
                 selected.push(d)
+                d3.select(this)
+                    .classed("selected", true)
+                    .attr("font-size", "20")
+                    .style("fill", "blue")
+            } else {
+                //remove from the selected list:
+                var index = selected.indexOf(d)
+                selected.splice(index, 1)
+                //return to default format. 
+                d3.select(this)
+                    .attr("font-size", "15px")
+                    .style("fill", "white")
             }
             console.log(selected)
         })
