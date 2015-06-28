@@ -6,7 +6,7 @@ d3.selection.prototype.moveToFront = function() {
 
 var width = parseInt(d3.select("#viz").style("width").slice(0, -2)),
     mWidth = parseInt(d3.select("#menu").style("width").slice(0, -2)),
-    height = $(window).height() - 75,
+    height = $(window).height() - 85,
     padding = 20,
     selectColor = "#ff7f00"
     defaultColor = "#377eb8";
