@@ -4,19 +4,28 @@ d3.selection.prototype.moveToFront = function() {
   });
 };
 
-var width = parseInt(d3.select("body").style("width").slice(0, -2)),
+var width = parseInt(d3.select("#viz").style("width").slice(0, -2)),
+    mWidth = parseInt(d3.select("#menu").style("width").slice(0, -2)),
     height = $(window).height() - 75,
     padding = 20,
     selectColor = "#ff7f00"
-    defaultColor = "#377eb8"
+    defaultColor = "#377eb8";
+
+console.log(mWidth)
+console.log(width)
+
+var menu = d3.select("#menu").append("svg")
+    .attr("width", mWidth)
+    .attr("height", height)
 
 var svg = d3.select("#viz").append("svg")
     .attr("width", width)
     .attr("height", height)
 
 var projection = d3.geo.albersUsa()
-    .scale(1200)
-    .translate([ width/ 1.5, height / 2]);
+    // .scale(1200)
+    .scale((width/85)*100)
+    .translate([ width/ 2, height / 2]);
 
 var path = d3.geo.path()
     .projection(projection);
@@ -63,7 +72,7 @@ function ready(error, us, oldData){
 
     var menuXScale = d3.scale.ordinal()
         .domain([0, 1, 2, 3])
-        .rangeRoundPoints([padding*6, width/4]);
+        .rangeRoundPoints([padding*3, mWidth - padding*3]);
 
     var menuYScale = d3.scale.linear()
         .domain([0, 4])
@@ -83,7 +92,7 @@ function ready(error, us, oldData){
 
     var selected = []
 
-    svg.selectAll("text")
+    menu.selectAll("text")
         .data(types).enter()
         .append("text")
         .attr("x", function(d,i){return menuXScale(getCol(i))})
