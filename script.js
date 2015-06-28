@@ -72,7 +72,7 @@ function ready(error, us, oldData){
 
     var menuXScale = d3.scale.ordinal()
         .domain([0, 1, 2, 3])
-        .rangeRoundPoints([padding*3, mWidth - padding*3]);
+        .rangeRoundPoints([padding*4, mWidth - padding*4]);
 
     var menuYScale = d3.scale.linear()
         .domain([0, 4])
