@@ -9,7 +9,7 @@ var svg = d3.select("#viz").append("svg")
 
 var projection = d3.geo.albersUsa()
     .scale(1200)
-    .translate([ width/ 2, height / 2]);
+    .translate([ width/ 1.6, height / 2]);
 
 var path = d3.geo.path()
     .projection(projection);
@@ -36,7 +36,6 @@ function ready(error, us, oldData){
       .attr("id", "state-borders")
       .attr("d", path);
 
-
     //So geo.albersUsa does not work with data that is outside of the US,
     //Some of our data is. Therefor we need to get rid of it. ohh well.
 
@@ -54,7 +53,14 @@ function ready(error, us, oldData){
     //code to test the classGenerator function. It works!
     // var test = classGenerator(data[1], types)
     // console.log(test)
-    
+
+    var menuXScale = d3.scale.ordinal()
+        .domain([0, 1, 2, 3])
+        .rangeRoundPoints([padding*4, width/4.5]);
+
+    var menuYScale = d3.scale.linear()
+        .domain([0, 4])
+        .range([padding*3, height - padding*3])
 
     svg.selectAll("circle")
         .data(data).enter()
@@ -64,7 +70,22 @@ function ready(error, us, oldData){
         .attr("cy", function(d){return projection([d.x,d.y])[1]  })
         .attr("r", 2)
         .attr("fill", "steelblue")
+
+    //Let's make the menu.
+
+    svg.selectAll("text")
+        .data(types).enter()
+        .append("text")
+        .attr("x", function(d,i){return menuXScale(getCol(i))})
+        .attr("y", function(d,i){return menuYScale(getRow(i))})
+        .text(function(d){return d})
+        .attr("font-family", "optima")
+        .attr("font-size", "15px")
+        .attr("text-anchor", "middle")
+        .style("fill", "white")
 }
+
+//Here is where we keep the functions.
 
 function classGenerator(d, types){
     //take a data object and return a string for the class designation.
@@ -79,4 +100,15 @@ function classGenerator(d, types){
     }
     //convert array of strings to one big string
     return classString.join(' ')
+}
+
+function getRow(i){
+    //function to get row in menu
+    return i%5
+}
+
+function getCol(i){
+    //Function to get column in menu
+    //i indexes at 0, goes up to 19 in this case.
+    return Math.floor(i/5)
 }
