@@ -20,6 +20,7 @@ var textSize = 19
 if(isMobile){
     textSize = 30
     d3.selectAll('.title').classed("mobile", "true")
+    height = height/2.1
 } else {
     d3.selectAll('.title').classed("desktop", "true")
 }
