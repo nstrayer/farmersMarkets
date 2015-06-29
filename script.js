@@ -13,7 +13,8 @@ var width = parseInt(d3.select("#viz").style("width").slice(0, -2)),
     height = $(window).height() - 85,
     padding = 20,
     selectColor = "#ff7f00"
-    defaultColor = "#377eb8";
+    defaultColor = "#377eb8",
+    firstTime = true;
 
 var textSize = 20
 if(isMobile){
@@ -196,6 +197,10 @@ function highlighter(selected){
             // .attr("r", 4)
             .attr("fill-opacity", "1")
             .moveToFront()
+    }
+    if(firstTime && isMobile){
+        $('body').scrollTo('#viz', {duration:"slow"});
+        firstTime = false
     }
 
 }
