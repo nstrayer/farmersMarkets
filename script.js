@@ -16,7 +16,7 @@ var width = parseInt(d3.select("#viz").style("width").slice(0, -2)),
     defaultColor = "#377eb8",
     firstTime = true;
 
-var textSize = 20
+var textSize = 19
 if(isMobile){
     textSize = 30
     d3.select("h1").style("font-size", 145)
