@@ -11,22 +11,32 @@
     color: white;
 }
 
-.title {
-    font-size: 3.5em;
+h1 {
     font-family: optima;
     color: white;
     padding-left: 15px;
+}
+h1.mobile {
+    font-size: 4.5em;
+}
+h1.desktop {
+    font-size: 3.2em;
 }
 
 p {
     color: white;
-    padding-left: 15px;
+    padding-left: 20px;
     font-family: optima;
-    font-size: 1.5em;
+}
+
+p.mobile {
+    font-size: 20px;
+}
+p.desktop {
+    font-size: 1.2em;
 }
 
 body {
-  /*font: 10px sans-serif;*/
   background-color: black;
 }
 
@@ -64,4 +74,10 @@ path {
 .clicked {
     fill: blue;
     font-size: 25;
+}
+
+hr {
+    height: 1px;
+    border: 0;
+    background: grey;
 }

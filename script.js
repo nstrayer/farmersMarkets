@@ -19,7 +19,9 @@ var width = parseInt(d3.select("#viz").style("width").slice(0, -2)),
 var textSize = 19
 if(isMobile){
     textSize = 30
-    d3.select("h1").style("font-size", 145)
+    d3.selectAll('.title').classed("mobile", "true")
+} else {
+    d3.selectAll('.title').classed("desktop", "true")
 }
 
 console.log(mWidth)
@@ -54,6 +56,8 @@ var zoom = d3.behavior.zoom()
 
 var g = svg.append("g")
     // .call(zoom);
+
+// if(!isMobile){g.call(zoom)}
 
 //Set up the queue so that all the stuff shows up at the same time. Also, the code is cleaner
 queue()
