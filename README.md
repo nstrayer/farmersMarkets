@@ -16,7 +16,7 @@ Data comes from [data.gov](http://catalog.data.gov/dataset/farmers-markets-geogr
 
 - [x] Which state has the most/least farmers markets? 
 - [x] What about per capita?
-- [ ] What about by % of gdp raised by farming to markets per capita? 
+- [x] What about by % of gdp raised by farming to markets per capita? 
 	- [Data Source](http://www.bea.gov/regional/) 	
 - [ ] Most isolated farmers markets?
 - [ ] Can you predict where a farmers market is by what it sells?
