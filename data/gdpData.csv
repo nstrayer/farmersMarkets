@@ -1,0 +1,130 @@
+"Gross domestic product (GDP) by state (millions of current dollars)"
+"Levels" 
+"Bureau of Economic Analysis" 
+""
+"Fips","Area","IndCode","Industry","2014"
+"00000","United States","1","All industry total",17316314
+"00000","United States","3","    Agriculture, forestry, fishing, and hunting",210227
+"01000","Alabama","1","All industry total",199440
+"01000","Alabama","3","    Agriculture, forestry, fishing, and hunting",3133
+"02000","Alaska","1","All industry total",57080
+"02000","Alaska","3","    Agriculture, forestry, fishing, and hunting",434
+"04000","Arizona","1","All industry total",284156
+"04000","Arizona","3","    Agriculture, forestry, fishing, and hunting",2205
+"05000","Arkansas","1","All industry total",121395
+"05000","Arkansas","3","    Agriculture, forestry, fishing, and hunting",3996
+"06000","California","1","All industry total",2311616
+"06000","California","3","    Agriculture, forestry, fishing, and hunting",34801
+"08000","Colorado","1","All industry total",306663
+"08000","Colorado","3","    Agriculture, forestry, fishing, and hunting",3264
+"09000","Connecticut","1","All industry total",253036
+"09000","Connecticut","3","    Agriculture, forestry, fishing, and hunting",323
+"10000","Delaware","1","All industry total",62756
+"10000","Delaware","3","    Agriculture, forestry, fishing, and hunting","(D)"
+"11000","District of Columbia","1","All industry total",115473
+"11000","District of Columbia","3","    Agriculture, forestry, fishing, and hunting","(L)"
+"12000","Florida","1","All industry total",839944
+"12000","Florida","3","    Agriculture, forestry, fishing, and hunting",6759
+"13000","Georgia","1","All industry total",476483
+"13000","Georgia","3","    Agriculture, forestry, fishing, and hunting",5587
+"15000","Hawaii","1","All industry total",77389
+"15000","Hawaii","3","    Agriculture, forestry, fishing, and hunting",528
+"16000","Idaho","1","All industry total",63952
+"16000","Idaho","3","    Agriculture, forestry, fishing, and hunting",4457
+"17000","Illinois","1","All industry total",745875
+"17000","Illinois","3","    Agriculture, forestry, fishing, and hunting",10609
+"18000","Indiana","1","All industry total",317840
+"18000","Indiana","3","    Agriculture, forestry, fishing, and hunting",5971
+"19000","Iowa","1","All industry total",170613
+"19000","Iowa","3","    Agriculture, forestry, fishing, and hunting",12267
+"20000","Kansas","1","All industry total",147075
+"20000","Kansas","3","    Agriculture, forestry, fishing, and hunting",8136
+"21000","Kentucky","1","All industry total",188602
+"21000","Kentucky","3","    Agriculture, forestry, fishing, and hunting",3633
+"22000","Louisiana","1","All industry total",251397
+"22000","Louisiana","3","    Agriculture, forestry, fishing, and hunting",2495
+"23000","Maine","1","All industry total",55838
+"23000","Maine","3","    Agriculture, forestry, fishing, and hunting",829
+"24000","Maryland","1","All industry total",348631
+"24000","Maryland","3","    Agriculture, forestry, fishing, and hunting",1077
+"25000","Massachusetts","1","All industry total",459937
+"25000","Massachusetts","3","    Agriculture, forestry, fishing, and hunting",695
+"26000","Michigan","1","All industry total",451516
+"26000","Michigan","3","    Agriculture, forestry, fishing, and hunting",3902
+"27000","Minnesota","1","All industry total",316204
+"27000","Minnesota","3","    Agriculture, forestry, fishing, and hunting",6941
+"28000","Mississippi","1","All industry total",104851
+"28000","Mississippi","3","    Agriculture, forestry, fishing, and hunting",3313
+"29000","Missouri","1","All industry total",284462
+"29000","Missouri","3","    Agriculture, forestry, fishing, and hunting",4856
+"30000","Montana","1","All industry total",44269
+"30000","Montana","3","    Agriculture, forestry, fishing, and hunting",1983
+"31000","Nebraska","1","All industry total",112159
+"31000","Nebraska","3","    Agriculture, forestry, fishing, and hunting",10199
+"32000","Nevada","1","All industry total",132064
+"32000","Nevada","3","    Agriculture, forestry, fishing, and hunting",376
+"33000","New Hampshire","1","All industry total",71552
+"33000","New Hampshire","3","    Agriculture, forestry, fishing, and hunting",183
+"34000","New Jersey","1","All industry total",549099
+"34000","New Jersey","3","    Agriculture, forestry, fishing, and hunting",871
+"35000","New Mexico","1","All industry total",92959
+"35000","New Mexico","3","    Agriculture, forestry, fishing, and hunting",2181
+"36000","New York","1","All industry total",1404518
+"36000","New York","3","    Agriculture, forestry, fishing, and hunting",3062
+"37000","North Carolina","1","All industry total",483126
+"37000","North Carolina","3","    Agriculture, forestry, fishing, and hunting",5104
+"38000","North Dakota","1","All industry total",55136
+"38000","North Dakota","3","    Agriculture, forestry, fishing, and hunting",2646
+"39000","Ohio","1","All industry total",583261
+"39000","Ohio","3","    Agriculture, forestry, fishing, and hunting",4262
+"40000","Oklahoma","1","All industry total",183501
+"40000","Oklahoma","3","    Agriculture, forestry, fishing, and hunting",2769
+"41000","Oregon","1","All industry total",215677
+"41000","Oregon","3","    Agriculture, forestry, fishing, and hunting",3944
+"42000","Pennsylvania","1","All industry total",662890
+"42000","Pennsylvania","3","    Agriculture, forestry, fishing, and hunting",3557
+"44000","Rhode Island","1","All industry total",54960
+"44000","Rhode Island","3","    Agriculture, forestry, fishing, and hunting","(D)"
+"45000","South Carolina","1","All industry total",190304
+"45000","South Carolina","3","    Agriculture, forestry, fishing, and hunting",1528
+"46000","South Dakota","1","All industry total",45867
+"46000","South Dakota","3","    Agriculture, forestry, fishing, and hunting",4563
+"47000","Tennessee","1","All industry total",300604
+"47000","Tennessee","3","    Agriculture, forestry, fishing, and hunting",2280
+"48000","Texas","1","All industry total",1648036
+"48000","Texas","3","    Agriculture, forestry, fishing, and hunting",11509
+"49000","Utah","1","All industry total",141410
+"49000","Utah","3","    Agriculture, forestry, fishing, and hunting",805
+"50000","Vermont","1","All industry total",29613
+"50000","Vermont","3","    Agriculture, forestry, fishing, and hunting",434
+"51000","Virginia","1","All industry total",463613
+"51000","Virginia","3","    Agriculture, forestry, fishing, and hunting",2054
+"53000","Washington","1","All industry total",427052
+"53000","Washington","3","    Agriculture, forestry, fishing, and hunting",7799
+"54000","West Virginia","1","All industry total",75337
+"54000","West Virginia","3","    Agriculture, forestry, fishing, and hunting",341
+"55000","Wisconsin","1","All industry total",292891
+"55000","Wisconsin","3","    Agriculture, forestry, fishing, and hunting",6256
+"56000","Wyoming","1","All industry total",44190
+"56000","Wyoming","3","    Agriculture, forestry, fishing, and hunting",797
+"91000","New England","1","All industry total",924937
+"91000","New England","3","    Agriculture, forestry, fishing, and hunting","(D)"
+"92000","Mideast","1","All industry total",3143366
+"92000","Mideast","3","    Agriculture, forestry, fishing, and hunting","(D)"
+"93000","Great Lakes","1","All industry total",2391384
+"93000","Great Lakes","3","    Agriculture, forestry, fishing, and hunting",30999
+"94000","Plains","1","All industry total",1131518
+"94000","Plains","3","    Agriculture, forestry, fishing, and hunting",49607
+"95000","Southeast","1","All industry total",3695095
+"95000","Southeast","3","    Agriculture, forestry, fishing, and hunting",40222
+"96000","Southwest","1","All industry total",2208652
+"96000","Southwest","3","    Agriculture, forestry, fishing, and hunting",18664
+"97000","Rocky Mountain","1","All industry total",600485
+"97000","Rocky Mountain","3","    Agriculture, forestry, fishing, and hunting",11305
+"98000","Far West","1","All industry total",3220878
+"98000","Far West","3","    Agriculture, forestry, fishing, and hunting",47883
+"Legend / Footnotes:"
+"Note-- NAICS Industry detail is based on the 2007 North American Industry Classification System (NAICS)."
+"(D) Not shown in order to avoid the disclosure of confidential information; estimates are included in higher level totals."
+"(L) Less than $500,000 in nominal or real GDP by state."
+"Last updated: June 10, 2015 - advance statistics for 2014 and revised statistics for 1997-2013."
