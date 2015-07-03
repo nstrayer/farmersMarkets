@@ -20,3 +20,8 @@ Data comes from [data.gov](http://catalog.data.gov/dataset/farmers-markets-geogr
 - Most isolated farmers markets?
 - Can you predict where a farmers market is by what it sells?
 - Do places with water shortages have a higher proportion of non water-intensive products?
+
+## Form of Second visualization: 
+- Scrolling form. 
+- Each section corresponding to my investigation steps per above.
+- Make it bootstrap style where they can select from a menu to go straight to that menu section. Kinda a mixture of narative and free-explore.
